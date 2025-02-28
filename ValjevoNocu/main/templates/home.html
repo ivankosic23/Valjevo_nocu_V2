@@ -1,0 +1,150 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Valjevo Night Life</title>
+    <link rel="stylesheet" href="{% static 'main/styles_main.css' %}">
+    <link rel="stylesheet" href="{% static 'main/styles_mobile.css' %}">
+    <link rel="stylesheet" href="{% static 'main/accordions.css' %}">
+    <script src="{% static 'main/script.js' %}"></script>
+</head>
+<body>
+    <h1>Dobrodosli na Valjevo Night Life!</h1>
+    <h2>Ovde mozete naci najpopularnija mesta za izlazak u gradu, zajedno sa informacijama o live svirkama, nastupima poznatih i slicnom.</h2>
+    
+    <!-- Day Menus -->
+    <div class="day-menu">
+        {%for day in days%}
+        <button> {{day}} </button>
+        {%endfor%}
+    </div>
+
+    <div class="day-menu-mobile">
+        <button class="left-arrow">  </button>
+        <div class="day-labels">
+            <label class="grey-label"> Nedelja </label>
+            <label class="current"> Ponedeljak </label>
+            <label class="grey-label"> Utorak </label>
+        </div>
+        <button class="right-arrow">  </button>
+    </div>
+
+    <!-- Image Grid -->
+    <div class="image-grid">
+        {%for svirka in svirke%}
+        <div class="image-item" onclick="openPopup('{{svirka.kafic.Ime}}', '{{ svirka.opis }}')">
+            <img id="mon_cheri" src="{{svirka.kafic.photo.url}}" alt="Image 1" class="kafic-image" data-name="{{ svirka.kafic.Ime }}" data-about="{{ svirka.opis }}" data-photo="{{ svirka.kafic.photo.url }}">
+            <p>{{svirka.kafic.Ime}}</p>
+        </div>
+        {%endfor%}
+    </div>
+
+    <!-- Popup -->
+    <div id="popup" class="popup" onclick="closePopupOutside(event)">
+        <div class="popup-content">
+            <span class="close-btn" onclick="closePopup()"></span>
+            <img id="popup-logo" src="logo.jpg" alt="Logo">
+            <h2 id="popup-header"></h2>
+            <p id="popup-label1"></p>
+            <div class="reservations">
+                <p id="popup-label2"> Rezervcije: </p>
+                <div class="popup-actions">
+                    <a class="popup-btn" href=""></a>
+                    <a class="popup-btn secondary" href="https://wa.me/+381645565006"></a>
+            </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Mobile App Accordions -->
+    <div class="accordion-container">
+        <!-- Accordion Menu 1 -->
+        <div class="accordion">
+            <div class="accordion-header">
+                <div class="accordion-labels">
+                    <p class="label">Oui Mon Cheri</p>
+                    <p class="label" class="subtitle">04/01/2024</p>
+                </div>
+                <div class="accordion-arrow">▼</div>
+            </div>
+            <div class="accordion-content">
+                <p>Content for accordion 1</p>
+            </div>
+        </div>
+        <!-- Accordion Menu 2 -->
+        <div class="accordion">
+            <div class="accordion-header">
+                <div class="accordion-labels">
+                    <p class="label">Fungi Art Caffe</p>
+                    <p class="label subtitle">04/01/2024</p>
+                </div>
+                <div class="accordion-arrow">▼</div>
+            </div>
+            <div class="accordion-content">
+                <p>Content for accordion 2</p>
+            </div>
+        </div>
+        <!-- Accordion Menu 3 -->
+        <div class="accordion">
+            <div class="accordion-header">
+                <div class="accordion-labels">
+                    <p class="label">Zipa Night Club</p>
+                    <p class="label subtitle">04/01/2024</p>
+                </div>
+                <div class="accordion-arrow">▼</div>
+            </div>
+            <div class="accordion-content">
+                <p>Content for accordion 2</p>
+            </div>
+        </div>
+        <!-- Accordion Menu 4 -->
+        <div class="accordion">
+            <div class="accordion-header">
+                <div class="accordion-labels">
+                    <p class="label">Time Zone</p>
+                    <p class="label subtitle">04/01/2024</p>
+                </div>
+                <div class="accordion-arrow">▼</div>
+            </div>
+            <div class="accordion-content">
+                <p>Content for accordion 2</p>
+            </div>
+        </div>
+        <!-- Accordion Menu 5 -->
+        <div class="accordion">
+            <div class="accordion-header">
+                <div class="accordion-labels">
+                    <p class="label">Pivnica Tschardak</p>
+                    <p class="label subtitle">04/01/2024</p>
+                </div>
+                <div class="accordion-arrow">▼</div>
+            </div>
+            <div class="accordion-content">
+                <p>Content for accordion 2</p>
+            </div>
+        </div>
+        <!-- Accordion Menu 6 -->
+        <div class="accordion">
+            <div class="accordion-header">
+                <div class="accordion-labels">
+                    <p class="label">Caffe Centar</p>
+                    <p class="label subtitle">04/01/2024</p> 
+                </div>
+                <div class="accordion-arrow">▼</div>
+            </div>
+            <div class="accordion-content">
+                <p>Content for accordion 2</p>
+            </div>
+        </div>
+    </div>
+    <!-- Footer -->
+    <div class="footer">
+        <p>Contact <br> <br>
+            email: dimitrijevicrelja2006@gmail.com <br><br>
+            phone number: 064 456 9327 <br>
+        </p>
+      </div>
+</body>
+</html>

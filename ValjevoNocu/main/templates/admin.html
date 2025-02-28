@@ -1,0 +1,43 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Valjevo Night Life - Admin</title>
+    <link rel="stylesheet" href="{% static 'main/styles_main.css' %}">
+</head>
+<body>
+    <h1>Valjevo Night Life - Unos desavanja</h1>
+    <form method="POST">  
+        {% csrf_token %}
+        <label for="datum">Date:</label>
+        <input type="date" name="datum" id="datum" required><br>
+        <label for="opis">About:</label>
+        <textarea name="opis" id="opis" required></textarea><br>
+        <label for="kafic">Select Kafic:</label>
+        <select name="kafic" id="kafic" required>
+            <option value="">Select a Kafic</option>
+            {% for kafic in kafici %}
+                <option value="{{ kafic.ID }}">{{ kafic.Ime }}</option>
+            {% endfor %}
+        </select><br>
+        <button type="submit" >Dodaj</button>
+    </form>
+    <script id="kafic" type="application/json">
+        {{ kafic|safe }}
+    </script>
+    <script>
+        const ImeKafica = JSON.parse(document.getElementById('kafic').textContent);
+            document.addEventListener('DOMContentLoaded', (event) => {
+                const serbianSelect = document.getElementById('Kafic');
+                ImeKafica.forEach(ImeKafica => {
+                    const option = document.createElement('option');
+                    option.value = Kafic.id;
+                    option.textContent = Kafic.Ime;
+                    ImeKafica.appendChild(option);
+                });
+            });
+    </script>
+</body>
+</html>
