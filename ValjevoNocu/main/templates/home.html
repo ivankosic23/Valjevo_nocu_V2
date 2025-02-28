@@ -32,10 +32,13 @@
     </div>
 
     <!-- Image Grid -->
+
+    
+
     <div class="image-grid">
         {%for svirka in svirke%}
         <div class="image-item" onclick="openPopup('{{svirka.kafic.Ime}}', '{{ svirka.opis }}')">
-            <img id="mon_cheri" src="{{svirka.kafic.photo.url}}" alt="Image 1" class="kafic-image" data-name="{{ svirka.kafic.Ime }}" data-about="{{ svirka.opis }}" data-photo="{{ svirka.kafic.photo.url }}">
+            <img id="{{svirka.kafic.Ime}}" src="{{svirka.kafic.photo.url}}" alt="Image 1" class="kafic-image" data-name="{{ svirka.kafic.Ime }}" data-about="{{ svirka.opis }}" data-photo="{{ svirka.kafic.photo.url }}">
             <p>{{svirka.kafic.Ime}}</p>
         </div>
         {%endfor%}
@@ -45,7 +48,7 @@
     <div id="popup" class="popup" onclick="closePopupOutside(event)">
         <div class="popup-content">
             <span class="close-btn" onclick="closePopup()"></span>
-            <img id="popup-logo" src="logo.jpg" alt="Logo">
+            <div id="popup-logo" > </div>
             <h2 id="popup-header"></h2>
             <p id="popup-label1"></p>
             <div class="reservations">

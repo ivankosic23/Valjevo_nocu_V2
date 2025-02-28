@@ -105,15 +105,19 @@ h2{
 #popup-logo {
     display: block;
     margin: 0 auto;
-    width: 25px;
-    height: 25px;
-    background-color: white;
+    width: 75px;
+    height: 75px;
+    background-image: url(resources/logo.png);
+    background-size: cover;
+}
+
+.popup-content h2{
+    margin-top: 0;
 }
 
 #popup-header {
     margin-left: 10%;
     margin-right: 10%;
-    margin-top: 4%;
     align-items: center;
     text-align: center;
 }
@@ -221,7 +225,7 @@ box-shadow: 0px 0px 29px 0px rgba(45, 255, 80, 0.9);
 box-shadow: 0px 0px 29px 0px rgba(255, 90, 45, 0.9);
 }
 
-#tchardak{
+#pivnica-tchardak{
     -webkit-box-shadow:0px 0px 29px 0px rgba(255, 234, 45, 0.9);
 -moz-box-shadow: 0px 0px 29px 0px rgba(255, 234, 45, 0.9);
 box-shadow: 0px 0px 29px 0px rgba(255, 234, 45, 0.9);
