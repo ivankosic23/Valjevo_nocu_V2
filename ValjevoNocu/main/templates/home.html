@@ -16,10 +16,18 @@
     
     <!-- Day Menus -->
     <div class="day-menu">
-        {%for day in days%}
-        <button> {{day}} </button>
+        {%for dayi, dayindex in days%}
+        <button onclick="filter('{{dayindex}}')"> {{dayi}} </button>
         {%endfor%}
     </div>
+    <script>
+        function filter(day)
+        {
+            const url = new URL(window.location.href);
+            url.searchParams.set('day', day);
+            window.location.href = url;
+        }
+    </script>
 
     <div class="day-menu-mobile">
         <button class="left-arrow">  </button>

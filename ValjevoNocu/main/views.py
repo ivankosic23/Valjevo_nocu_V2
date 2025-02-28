@@ -18,11 +18,16 @@ def home(request):
         'Nedelja' 
                  ]
     today = datetime.now()
+    dani=[]
     days =today.weekday()
-    dayi=[days_serbian[(days + i) % 7] for i in range(7)]
+    for i in range(7):
+        
+        dayi=days_serbian[(days + i) % 7]
+        dayindex=(days+i)%7
+        dani.append((dayi,dayindex))
     #Kontejneri sa kaficima
     svirke = Svirka.objects.all()
-    return render(request,"home.html",{'days':dayi,
+    return render(request,"home.html",{'days':dani,
                                        'svirke':svirke})
 
 
