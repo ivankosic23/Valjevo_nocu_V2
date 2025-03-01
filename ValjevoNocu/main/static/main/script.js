@@ -1,7 +1,9 @@
-function openPopup(headerText, label) {
+function openPopup(headerText, label, ig_link, wa_link) {
     document.getElementById('popup').style.display = 'block';
     document.getElementById('popup-header').textContent = headerText;
     document.getElementById('popup-label1').textContent = label;
+    document.getElementsByClassName('popup-button').src = ig_link;
+    document.getElementsByClassName('secondary').src = wa_link;
 }
 
 function closePopup() {
