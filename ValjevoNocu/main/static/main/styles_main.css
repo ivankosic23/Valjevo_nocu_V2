@@ -20,6 +20,7 @@ body {
 }
 
 h1{
+    font-size:22px;
     margin: 20px;
 }
 
@@ -27,6 +28,8 @@ h2{
     font-size: 18px;
     margin: 30px 20vw 0 20vw;
 }
+
+/* Image grid */
 
 .image-grid {
     display: flex;

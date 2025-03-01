@@ -6,8 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Valjevo Night Life</title>
     <link rel="stylesheet" href="{% static 'main/styles_main.css' %}">
-    <link rel="stylesheet" href="{% static 'main/styles_mobile.css' %}">
-    <link rel="stylesheet" href="{% static 'main/accordions.css' %}">
+    <link rel="stylesheet" href="{% static 'main/styles_mobile_new.css' %}">
     <script src="{% static 'main/script.js' %}"></script>
 </head>
 <body>
@@ -28,21 +27,14 @@
             window.location.href = url;
         }
     </script>
-
+    
     <div class="day-menu-mobile">
         <button class="left-arrow">  </button>
-        <div class="day-labels">
-            <label class="grey-label"> Nedelja </label>
-            <label class="current"> Ponedeljak </label>
-            <label class="grey-label"> Utorak </label>
-        </div>
+        <label class="current"> Dan </label>
         <button class="right-arrow">  </button>
     </div>
 
     <!-- Image Grid -->
-
-    
-
     <div class="image-grid">
         {%if svirke%}
         {%for svirka in svirke%}

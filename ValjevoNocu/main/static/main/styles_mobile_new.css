@@ -17,9 +17,21 @@
         display: none;
     }
 
-    .day-menu-mobile{
+    h1{
+        font-size:22px;
+        margin: 20px;
+    }
+    
+    h2{
+        font-size: 16px;
+        margin: 5% 10%;
+    }
+
+    .day-menu-mobile {
         display: flex;
-        justify-content: space-between;
+        justify-content: center;
+        align-items: center;
+        gap:10%;
     }
 
      /* arrow buttons */
