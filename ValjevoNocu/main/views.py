@@ -37,7 +37,7 @@ def home(request):
         danpom=(today + timedelta(days=i))
         dayindex = danpom.strftime("%Y-%m-%d")
         dani.append((dayi,dayindex))
-        selected_day = request.GET.get('datum', None)
+        selected_day = request.GET.get('datum', daysi)
         date_object = datetime.strptime(selected_day, "%Y-%m-%d").date()
         danilabel=date_object.weekday()
         danilab=days_serbian_padezi[danilabel]
