@@ -14,6 +14,9 @@
     .day-menu{
         display: none;
     }
+    .image-grid {
+        display: flex;
+    }
 
     h1{
         font-size: 20px;

@@ -44,7 +44,7 @@
     
 
     <div class="image-grid">
-        {%if svirke%}
+        {%if svirke %}
         {%for svirka in svirke%}
         <div class="image-item" onclick="openPopup('{{svirka.kafic.Ime}}', '{{ svirka.opis }}', '{{svirka.kafic.iglink}}', '{{svirka.kafic.walink}}')">
             <img id="{{svirka.kafic.Ime}}" src="{{svirka.kafic.photo.url}}" alt="Image 1" class="kafic-image" data-name="{{ svirka.kafic.Ime }}" data-about="{{ svirka.opis }}" data-photo="{{ svirka.kafic.photo.url }}">
@@ -52,7 +52,7 @@
         </div>
         {%endfor%}
         {% else %}
-            <p >Nema nijedne Svirke u </p>
+            <p >Nema nijedne svirke u {{danlabel}}</p>
         {%endif%}
     </div>
 

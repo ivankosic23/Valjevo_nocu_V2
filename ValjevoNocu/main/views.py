@@ -18,9 +18,19 @@ def home(request):
         'Subota',      # Saturday
         'Nedelja' 
                  ]
+    days_serbian_padezi = [
+        'ponedeljak',  # Monday
+        'utorak',      # Tuesday
+        'sredu',       # Wednesday
+        'četvrtak',    # Thursday
+        'petak',       # Friday
+        'subotu',      # Saturday
+        'nedelju' 
+                 ]
     today = datetime.now()
-    dani=[]
+    dani=[] 
     days =today.weekday()
+    daysi=today.strftime("%Y-%m-%d")
     for i in range(7):
         
         dayi=days_serbian[(days + i) % 7]
@@ -28,18 +38,18 @@ def home(request):
         dayindex = danpom.strftime("%Y-%m-%d")
         dani.append((dayi,dayindex))
         selected_day = request.GET.get('datum', None)
-        svirkes = Svirka.objects.select_related('kafic').filter(datum=dayindex)
+        date_object = datetime.strptime(selected_day, "%Y-%m-%d").date()
+        danilabel=date_object.weekday()
+        danilab=days_serbian_padezi[danilabel]
+        svirkes = Svirka.objects.select_related('kafic').filter(datum=daysi)
         if selected_day is not None:
              svirkes = Svirka.objects.select_related('kafic').filter(datum=selected_day)
     #Kontejneri sa kaficima
 
     return render(request,"home.html",{'days':dani,
-                                       'svirke':svirkes})
+                                       'svirke':svirkes,
+                                       'danlabel':danilab})
 
-@login_required
-def relja(request):
-    kafici=Kafic.objects.all()
-    return render(request,'admin.html',{'kafici':kafici})
 @login_required
 def dogadjaj(request):
     if request.method=='POST':
