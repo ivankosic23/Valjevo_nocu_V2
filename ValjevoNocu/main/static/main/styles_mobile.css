@@ -10,50 +10,9 @@
     }
     .footer{
         display: none;
-    }
-
-    .image-grid{
-        display: none;
-    }
-
+    }    
     .day-menu{
         display: none;
-    }
-
-    .day-menu-mobile{
-        display:inline-flex;
-        align-items: center;
-        margin: 20px;
-        gap: 2%;
-    }
-
-    .left-arrow{
-        background-image: url(resources/left-arrow.png);
-    }
-    
-    .right-arrow{
-        
-        background-image: url(resources/right-arrow.png);
-    }
-
-    .day-menu-mobile button{
-        background-repeat: no-repeat;
-        background-size: cover;
-        width: 50px;
-        height: 50px;
-        border: 0px;
-        background-color: rgb(0, 0, 0, 0);
-        align-items: center;
-    }
-    
-    .grey-label{
-        font-size: 10px;
-        color: #505050;
-        align-items: center;
-    }
-
-    .current{
-        font-size: 15px;
     }
 
     h1{
@@ -66,6 +25,60 @@
         margin: 3vw 5vw 3vw 5vw;
     }
 
+    /*image grid*/
+    .image-grid {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 4vw;
+        padding: 5%;
+        overflow: hidden;
+        position: relative;
+        margin-bottom: 0;
+    }
+    
+    .image-item {
+        position: relative;
+        padding-left: 5vw;
+        padding-right: 5vw;
+        padding-bottom: 2vw;
+        padding-top: 2vw;
+    }
+
+    .day-menu-mobile{
+    }
+
+    /* arrow buttons */
+    .day-menu-mobile button{
+        background-repeat: no-repeat;
+        background-size: cover;
+        width: 50px;
+        height: 50px;
+        border: 0px;
+        background-color: rgb(0, 0, 0, 0);
+        align-items: center;
+    }
+
+    .left-arrow{
+        background-image: url(resources/left-arrow.png);
+    }
+    
+    .right-arrow{
+        
+        background-image: url(resources/right-arrow.png);
+    }
+    /* day labels */
+    .grey-label{
+        font-size: 10px;
+        color: #505050;
+        align-items: center;
+    }
+
+    .current{
+        font-size: 15px;
+    }
+
+
     .day-labels{
         text-align: center;
         padding: 10px 0px 10px 0px;
@@ -73,9 +86,5 @@
         display: flex;
         gap: 5%;
         width: 50%;
-    }
-
-    .accordion-container{
-        display: block;
     }
 }
