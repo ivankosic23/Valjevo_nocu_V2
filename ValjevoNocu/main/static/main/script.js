@@ -2,17 +2,8 @@ function openPopup(headerText, label, ig_link, wa_link) {
     document.getElementById('popup').style.display = 'block';
     document.getElementById('popup-header').textContent = headerText;
     document.getElementById('popup-label1').textContent = label;
-    const ig=document.getElementById('instalink')[0];
-    const wa=document.getElementById('walink')[0];
-    if(ig)
-    {
-    ig.href = ig_link;
-    }
-    if(wa)
-    {
-    wa.href = wa_link;
-    }
-    
+    const ig=document.getElementById('instalink').href="https://www.instagram.com";
+    const wa=document.getElementById('walink').href="https://www.instagram.com";
 }
 
 function closePopup() {
