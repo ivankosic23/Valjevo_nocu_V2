@@ -28,12 +28,13 @@ def home(request):
         dayindex = danpom.strftime("%Y-%m-%d")
         dani.append((dayi,dayindex))
         selected_day = request.GET.get('datum', None)
+        svirkes = Svirka.objects.filter(datum=dayindex)
         if selected_day is not None:
-             svirke = Svirka.objects.filter(datum=selected_day)
+             svirkes = Svirka.objects.filter(datum=selected_day)
     #Kontejneri sa kaficima
 
     return render(request,"home.html",{'days':dani,
-                                       'svirke':svirke})
+                                       'svirke':svirkes})
 
 @login_required
 def relja(request):
