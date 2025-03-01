@@ -46,7 +46,7 @@
     <div class="image-grid">
         {%if svirke%}
         {%for svirka in svirke%}
-        <div class="image-item" onclick="openPopup('{{svirka.kafic.Ime}}', '{{ svirka.opis }}, ig_link, wa_link')">
+        <div class="image-item" onclick="openPopup('{{svirka.kafic.Ime}}', '{{ svirka.opis }}', 'www.instagram.com/oui_mon_cheri_2023/', '{{svirka.kafic.walink}}')">
             <img id="{{svirka.kafic.Ime}}" src="{{svirka.kafic.photo.url}}" alt="Image 1" class="kafic-image" data-name="{{ svirka.kafic.Ime }}" data-about="{{ svirka.opis }}" data-photo="{{ svirka.kafic.photo.url }}">
             <p>{{svirka.kafic.Ime}}</p>
         </div>
@@ -66,7 +66,7 @@
             <div class="reservations">
                 <p id="popup-label2"> Rezervcije: </p>
                 <div class="popup-actions">
-                    <a class="popup-btn" href=""></a>
+                    <a class="popup-btn" href="" id="instalink"></a>
                     <a class="popup-btn secondary" href="https://wa.me/+381645565006"></a>
             </div>
             </div>
