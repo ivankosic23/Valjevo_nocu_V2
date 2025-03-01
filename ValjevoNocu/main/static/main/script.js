@@ -2,8 +2,8 @@ function openPopup(headerText, label, ig_link, wa_link) {
     document.getElementById('popup').style.display = 'block';
     document.getElementById('popup-header').textContent = headerText;
     document.getElementById('popup-label1').textContent = label;
-    const ig=document.getElementById('instalink').href=ig_link;
-    const wa=document.getElementById('walink').href=wa_link;
+    document.getElementById('instalink').href=ig_link;
+    document.getElementById('walink').href=wa_link;
 }
 
 function closePopup() {

@@ -16,6 +16,9 @@
     .footer{
         display: none;
     }
+    .image-grid {
+        display: flex;
+    }
 
     .day-menu-mobile{
         display: flex;
