@@ -36,10 +36,7 @@ def home(request):
     return render(request,"home.html",{'days':dani,
                                        'svirke':svirkes})
 
-@login_required
-def relja(request):
-    kafici=Kafic.objects.all()
-    return render(request,'admin.html',{'kafici':kafici})
+
 @login_required
 def dogadjaj(request):
     if request.method=='POST':
