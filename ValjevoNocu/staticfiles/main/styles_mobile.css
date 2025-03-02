@@ -16,30 +16,21 @@
     .footer{
         display: none;
     }
-
-    h1{
-        font-size:22px;
-        margin: 20px;
-    }
-    
-    h2{
-        font-size: 16px;
-        margin: 5% 10%;
-    }
-
-    .day-menu-mobile {
+    .image-grid {
         display: flex;
-        justify-content: center;
-        align-items: center;
-        gap:2.5%;
+    }
+
+    .day-menu-mobile{
+        display: flex;
+        justify-content: space-between;
     }
 
      /* arrow buttons */
      .day-menu-mobile button{
         background-repeat: no-repeat;
         background-size: cover;
-        width: 25px;
-        height: 25px;
+        width: 50px;
+        height: 50px;
         border: 0px;
         background-color: rgb(0, 0, 0, 0);
         align-items: center;
@@ -50,14 +41,14 @@
     }
     
     .right-arrow{
+        
         background-image: url(resources/right-arrow.png);
     }
 
-    .menu-form{
-        display: flex; 
-        align-items: center; 
-        width: 100vw; gap:5%; 
-        justify-content: center;
+    .day-menu-mobile button{
+        width: 25px;
+        height: 25px;
+        align-items: center;
     }
 
     /* Image grid */
@@ -197,5 +188,8 @@
     
     .popup-btn.secondary {
         background-image: url("resources/whatsapp_icon.png");
+    }
+    button{
+        color: white;
     }
 }
