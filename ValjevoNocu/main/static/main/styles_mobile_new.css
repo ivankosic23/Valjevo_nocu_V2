@@ -50,14 +50,13 @@
     }
     
     .right-arrow{
+        
         background-image: url(resources/right-arrow.png);
     }
 
     .menu-form{
-        display: flex; 
-        align-items: center; 
-        width: 100vw; gap:5%; 
-        justify-content: center;
+        display: flex;
+        align-items: center;
     }
 
     /* Image grid */

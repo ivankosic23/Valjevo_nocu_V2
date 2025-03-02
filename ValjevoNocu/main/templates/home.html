@@ -30,7 +30,7 @@
     
     <div class="day-menu-mobile">
         <form method="get">
-            <div class="menu-form">
+            <div class="menu-form" style="display: flex; align-items: center; width: 100vw; gap:5%; justify-content: center;">
                 <input type="hidden" name="datum" value="{{day_date}}">
                 <button type="submit" name="day_index" value="{{ day_index|add:-1 }}" class="left-arrow"></button>
                 <span class="current">{{ current_label }}</span>
