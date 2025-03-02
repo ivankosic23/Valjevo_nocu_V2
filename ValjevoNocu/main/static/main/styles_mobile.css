@@ -189,5 +189,7 @@
     .popup-btn.secondary {
         background-image: url("resources/whatsapp_icon.png");
     }
-
+    button{
+        color: white;
+    }
 }

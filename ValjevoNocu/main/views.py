@@ -38,11 +38,11 @@ def home(request):
         dayindex = danpom.strftime("%Y-%m-%d")
         dani.append((dayi,dayindex))
         day_index = int(request.GET.get('day_index',0))
+
     selected_day = request.GET.get('datum', daysi)
 
-
     if day_index < 0:
-        day_index = len(dani) - 1  # Set to last index
+            day_index = len(dani) - 1  # Set to last index
     elif day_index >= len(dani):
         day_index = 0
 
