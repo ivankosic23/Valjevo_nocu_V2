@@ -54,8 +54,9 @@
         background-image: url(resources/right-arrow.png);
     }
 
-    .menu-form{
-        display: flex;
+    .day-menu-mobile button{
+        width: 25px;
+        height: 25px;
         align-items: center;
     }
 
