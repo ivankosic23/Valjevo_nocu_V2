@@ -50,13 +50,11 @@
     }
     
     .right-arrow{
-        
         background-image: url(resources/right-arrow.png);
     }
 
-    .day-menu-mobile button{
-        width: 25px;
-        height: 25px;
+    .menu-form{
+        display: flex;
         align-items: center;
     }
 
