@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Valjevo Night Life</title>
     <link rel="stylesheet" href="{% static 'main/styles_main.css' %}">
-    <link rel="stylesheet" href="{% static 'main/styles_mobile_new.css' %}">
+    <link rel="stylesheet" href="{% static 'main/styles_mobile.css' %}">
     <script src="{% static 'main/script.js' %}"></script>
 </head>
 <body>
@@ -29,11 +29,11 @@
     </script>
     
     <div class="day-menu-mobile">
-        <form method="get">
+        <form method="get" class="menu-form">
             <input type="hidden" name="datum" value="{{day_date}}">
-            <button type="submit" name="day_index" value="{{ day_index|add:-1 }}"><</button>
-            <span>{{ current_label }}</span>
-            <button type="submit" name="day_index" value="{{ day_index|add:1}}">></button>
+            <button type="submit" name="day_index" value="{{ day_index|add:-1 }}" class="left-arrow"></button>
+            <span class="current">{{ current_label }}</span>
+            <button type="submit" name="day_index" value="{{ day_index|add:1}}" class="right-arrow"></button>
         </form>
     </div>
 
@@ -63,87 +63,14 @@
                 <div class="popup-actions">
                     <a class="popup-btn" href="" id="instalink"></a>
                     <a class="popup-btn secondary" href="" id="walink"></a>
+                </div>
             </div>
+            <div class="info">
+                <div class="adresa"> <img src="../static/main/resources/house.png"> <p> Ovde adresa lokala </p> </div>
+                <div class="radno-vreme"> <img src="../static/main/resources/clock.png"> <p> Ovde radno vreme </p> </div>
             </div>
         </div>
     </div>
-
-    <!--
-    <div class="accordion-container">
-        
-        <div class="accordion">
-            <div class="accordion-header">
-                <div class="accordion-labels">
-                    <p class="label">Oui Mon Cheri</p>
-                    <p class="label" class="subtitle">04/01/2024</p>
-                </div>
-                <div class="accordion-arrow">▼</div>
-            </div>
-            <div class="accordion-content">
-                <p>Content for accordion 1</p>
-            </div>
-        </div>
-        <div class="accordion">
-            <div class="accordion-header">
-                <div class="accordion-labels">
-                    <p class="label">Fungi Art Caffe</p>
-                    <p class="label subtitle">04/01/2024</p>
-                </div>
-                <div class="accordion-arrow">▼</div>
-            </div>
-            <div class="accordion-content">
-                <p>Content for accordion 2</p>
-            </div>
-        </div>
-        <div class="accordion">
-            <div class="accordion-header">
-                <div class="accordion-labels">
-                    <p class="label">Zipa Night Club</p>
-                    <p class="label subtitle">04/01/2024</p>
-                </div>
-                <div class="accordion-arrow">▼</div>
-            </div>
-            <div class="accordion-content">
-                <p>Content for accordion 2</p>
-            </div>
-        </div>
-        <div class="accordion">
-            <div class="accordion-header">
-                <div class="accordion-labels">
-                    <p class="label">Time Zone</p>
-                    <p class="label subtitle">04/01/2024</p>
-                </div>
-                <div class="accordion-arrow">▼</div>
-            </div>
-            <div class="accordion-content">
-                <p>Content for accordion 2</p>
-            </div>
-        </div>
-        <div class="accordion">
-            <div class="accordion-header">
-                <div class="accordion-labels">
-                    <p class="label">Pivnica Tschardak</p>
-                    <p class="label subtitle">04/01/2024</p>
-                </div>
-                <div class="accordion-arrow">▼</div>
-            </div>
-            <div class="accordion-content">
-                <p>Content for accordion 2</p>
-            </div>
-        </div>
-        <div class="accordion">
-            <div class="accordion-header">
-                <div class="accordion-labels">
-                    <p class="label">Caffe Centar</p>
-                    <p class="label subtitle">04/01/2024</p> 
-                </div>
-                <div class="accordion-arrow">▼</div>
-            </div>
-            <div class="accordion-content">
-                <p>Content for accordion 2</p>
-            </div>
-        </div>
-    </div> -->
 
     <!-- Footer -->
     <div class="footer">

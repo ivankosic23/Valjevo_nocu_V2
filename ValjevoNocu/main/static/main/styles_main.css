@@ -79,13 +79,15 @@ h2{
     height: 100%;
     background-color: rgba(0, 0, 0, 0.5);
     z-index: 9999;
+    justify-content: center;
+    align-items: center;
 }
 
 .popup-content {
     position: relative;
     margin: 10% auto;
-    width: 50%;
-    height: 50%;
+    width: 30%;
+    height: 70%;
     padding: 20px;
     border-radius: 10px;
     text-align: left;
@@ -146,8 +148,7 @@ h2{
     display: flex;
     justify-content:space-between;
     align-items: center;
-    width: 10%;
-    gap: 2%;
+    width: 15%;
 }
 
 .popup-btn {
@@ -171,6 +172,23 @@ h2{
 .popup-btn:hover {
     scale: 120%;
 
+}
+
+.adresa{
+    display: flex;
+    align-items: center;
+    gap: 5%;
+}
+
+.radno-vreme{
+    display: flex;
+    align-items: center;
+    gap: 5%;
+}
+
+.info img{
+    width: 25px;
+    height: 25px;
 }
 
 /* day menues */
