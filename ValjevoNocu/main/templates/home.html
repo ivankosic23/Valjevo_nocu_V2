@@ -29,9 +29,12 @@
     </script>
     
     <div class="day-menu-mobile">
-        <button class="left-arrow">  </button>
-        <label class="current"> Dan </label>
-        <button class="right-arrow">  </button>
+        <form method="get">
+            <input type="hidden" name="datum" value="{{day_date}}">
+            <button type="submit" name="day_index" value="{{ day_index|add:-1 }}"><</button>
+            <span>{{ current_label }}</span>
+            <button type="submit" name="day_index" value="{{ day_index|add:1}}">></button>
+        </form>
     </div>
 
     <!-- Image Grid -->
