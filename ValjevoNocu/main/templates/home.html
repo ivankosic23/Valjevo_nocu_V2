@@ -24,7 +24,7 @@
         function filter(day)
         {
             const url = new URL(window.location.href);
-            url.searchParams.set('day', day);
+            url.searchParams.set('datum', day);
             window.location.href = url;
         }
     </script>
@@ -44,12 +44,16 @@
     
 
     <div class="image-grid">
+        {%if svirke%}
         {%for svirka in svirke%}
         <div class="image-item" onclick="openPopup('{{svirka.kafic.Ime}}', '{{ svirka.opis }}')">
             <img id="{{svirka.kafic.Ime}}" src="{{svirka.kafic.photo.url}}" alt="Image 1" class="kafic-image" data-name="{{ svirka.kafic.Ime }}" data-about="{{ svirka.opis }}" data-photo="{{ svirka.kafic.photo.url }}">
             <p>{{svirka.kafic.Ime}}</p>
         </div>
         {%endfor%}
+        {% else %}
+            <p>No Svirke objects available for the selected day.</p>
+        {%endif%}
     </div>
 
     <!-- Popup -->

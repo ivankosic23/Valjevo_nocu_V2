@@ -1,8 +1,9 @@
 from django.shortcuts import render, redirect
-from django.http import HttpResponse
+from django.contrib.auth.decorators import login_required
 from django.contrib.auth.models import User
 from .models import Kafic,Svirka
 from datetime import datetime, timedelta
+
 
 
 # Create your views here.
@@ -23,18 +24,22 @@ def home(request):
     for i in range(7):
         
         dayi=days_serbian[(days + i) % 7]
-        dayindex=(days+i)%7
+        danpom=(today + timedelta(days=i))
+        dayindex = danpom.strftime("%Y-%m-%d")
         dani.append((dayi,dayindex))
+        selected_day = request.GET.get('datum', None)
+        if selected_day is not None:
+             svirke = Svirka.objects.filter(datum=selected_day)
     #Kontejneri sa kaficima
-    svirke = Svirka.objects.all()
+
     return render(request,"home.html",{'days':dani,
                                        'svirke':svirke})
 
-
+@login_required
 def relja(request):
     kafici=Kafic.objects.all()
     return render(request,'admin.html',{'kafici':kafici})
-
+@login_required
 def dogadjaj(request):
     if request.method=='POST':
         ime =request.POST['Kafic']
@@ -43,7 +48,7 @@ def dogadjaj(request):
         dodati_dogadjaj=Svirka(ime=ime,datum=datum,opis=opis)
         dodati_dogadjaj.save()
         return render(request,"admin.html",{})
-    
+@login_required   
 def create_svirka(request):
     if request.method == 'POST':
         # Get data from the request
@@ -66,3 +71,4 @@ def create_svirka(request):
 
     kafici=Kafic.objects.all()
     return render(request, 'admin.html', {'kafici': kafici})
+
