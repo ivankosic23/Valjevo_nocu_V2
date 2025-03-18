@@ -37,8 +37,8 @@ def home(request):
         danpom=(today + timedelta(days=i))
         dayindex = danpom.strftime("%Y-%m-%d")
         dani.append((dayi,dayindex))
-        day_index = int(request.GET.get('day_index',0))
-
+    
+    day_index = int(request.GET.get('day_index',0))
     selected_day = request.GET.get('datum', daysi)
 
     if day_index < 0:
@@ -47,7 +47,7 @@ def home(request):
         day_index = 0
 
     try:
-        date_object = datetime.strptime(selected_day, "%Y-%m-%d").date()
+        date_object = datetime.strptime(selected_day, "%Y-%m-%d").date()+timedelta(days=day_index)
         danilabel=date_object.weekday()
         danilab=days_serbian_padezi[danilabel]
     except ValueError:
@@ -55,11 +55,10 @@ def home(request):
 
     
     current_label=dani[day_index][0]
-    day_date=dani[day_index][1]
 
     svirkes = Svirka.objects.select_related('kafic').filter(datum=daysi)
     if selected_day is not None:
-             svirkes = Svirka.objects.select_related('kafic').filter(datum=selected_day)
+             svirkes = Svirka.objects.select_related('kafic').filter(datum=date_object)
     #Kontejneri sa kaficima
 
     return render(request,"home.html",{'days':dani,
@@ -67,7 +66,7 @@ def home(request):
                                        'danlabel':danilab,
                                        'day_index':day_index,
                                        'current_label':current_label,
-                                       'day_date':day_date})
+                                       'day_date':daysi})
 
 @login_required
 def dogadjaj(request):
