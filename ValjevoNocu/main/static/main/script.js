@@ -1,9 +1,11 @@
-function openPopup(headerText, label, ig_link, wa_link) {
+function openPopup(headerText, label, ig_link, wa_link, radno_vreme, adresa) {
     document.getElementById('popup').style.display = 'flex';
     document.getElementById('popup-header').textContent = headerText;
     document.getElementById('popup-label1').textContent = label;
     document.getElementById('instalink').href=ig_link;
     document.getElementById('walink').href=wa_link;
+    document.getElementById('radno_vreme').textContent = radno_vreme;
+    document.getElementById('adresa').textContent = adresa;
 }
 
 function closePopup() {

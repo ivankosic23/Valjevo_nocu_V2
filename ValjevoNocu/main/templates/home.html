@@ -37,16 +37,13 @@
         </form>
     </div>
 
-<<<<<<< HEAD
     <div class="container">
-        <!-- Image Grid -->
-=======
+
     <!-- Image Grid -->
->>>>>>> parent of 12e6bdf (sajt beta 2.0)
     <div class="image-grid">
         {%if svirke %}
         {%for svirka in svirke%}
-        <div class="image-item" onclick="openPopup('{{svirka.kafic.Ime}}', '{{ svirka.opis }}', '{{svirka.kafic.iglink}}', '{{svirka.kafic.walink}}')">
+        <div class="image-item" onclick="openPopup('{{svirka.kafic.Ime}}', '{{ svirka.opis }}', '{{svirka.kafic.iglink}}', '{{svirka.kafic.walink}}', '{{svrika.kafic.radno_vreme}}', '{{svirka.kafic.adresa}}')">
             <img id="{{svirka.kafic.Ime}}" src="{{svirka.kafic.photo.url}}" alt="Image 1" class="kafic-image" data-name="{{ svirka.kafic.Ime }}" data-about="{{ svirka.opis }}" data-photo="{{ svirka.kafic.photo.url }}">
             <p>{{svirka.kafic.Ime}}</p>
         </div>
@@ -72,7 +69,7 @@
             </div>
             <div class="info">
                 <div class="adresa"> <img src="../static/main/resources/house.png"> <p> Ovde adresa lokala </p> </div>
-                <div class="radno-vreme"> <img src="../static/main/resources/clock.png"> <p> Ovde radno vreme </p> </div>
+                <div class="radno_vreme"> <img src="../static/main/resources/clock.png"> <p> Ovde radno vreme </p> </div>
             </div>
         </div>
     </div>
