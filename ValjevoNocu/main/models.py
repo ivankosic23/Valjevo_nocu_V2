@@ -8,8 +8,6 @@ class Kafic(models.Model):
     photo = models.ImageField(upload_to='photos/',null=True)
     iglink=models.URLField(max_length=500,null=True)
     walink=models.URLField(max_length=500,null=True)
-    br_mesta=models.CharField(max_length=1000,default='50-100')
-    radno_vreme=models.CharField(max_length=100,default='21:00-01:00')
 
     def __str__(self):
         return self.Ime
