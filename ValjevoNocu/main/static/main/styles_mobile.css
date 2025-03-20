@@ -3,7 +3,7 @@
     body{
         background-size: cover;
         background-position: center;
-        background-repeat: repeat;
+        background-repeat: no-repeat;
         margin:20px;
         height: 100dvh;
         background-blend-mode: normal;
