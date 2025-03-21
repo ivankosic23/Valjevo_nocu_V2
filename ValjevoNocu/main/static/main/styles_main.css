@@ -182,16 +182,10 @@ h2{
 
 }
 
-.adresa{
+.info{
     display: flex;
-    align-items: center;
     gap: 5%;
-}
-
-.radno-vreme{
-    display: flex;
     align-items: center;
-    gap: 5%;
 }
 
 .info img{
