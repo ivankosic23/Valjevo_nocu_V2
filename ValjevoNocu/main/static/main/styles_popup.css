@@ -1,0 +1,251 @@
+/* popup */
+
+.popup {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 9999;
+    justify-content: center;
+    align-items: center;
+}
+
+.popup-content {
+    position: relative;
+    margin: 10% auto;
+    width: 30%;
+    height: 70%;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: left;
+    
+    backdrop-filter: blur(10px); /* Blurs the background behind it */
+    -webkit-backdrop-filter: blur(10px); /* Safari support */
+    border-radius: 15px; /* Smooth edges */
+    border: 1px solid rgba(255, 255, 255, 0.2); /* Subtle border */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Soft shadow */
+}
+
+.close-btn {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    width: 26px;
+    height: 26px;
+    cursor: pointer;
+    background-image: url(resources/close.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+#popup-logo {
+    display: block;
+    margin: 0 auto;
+    width: 75px;
+    height: 75px;
+    background-image: url(resources/logo.png);
+    background-size: cover;
+}
+
+.popup-content h2{
+    margin-top: 0;
+}
+
+#popup-header {
+    margin-left: 10%;
+    margin-right: 10%;
+    align-items: center;
+    text-align: center;
+}
+
+.reservations{
+    display: flex;
+    gap: 2.5%;
+}
+
+#popup-label1{
+    margin-top: 4%;
+}
+
+#popup-label2{
+    width: auto;
+}
+
+.popup-actions {
+    display: flex;
+    justify-content:space-between;
+    align-items: center;
+    width: 15%;
+}
+
+.popup-btn {
+    width: 25px;
+    height: 25px;
+    cursor: pointer;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    background-color: rgba(0, 0, 0, 0);
+    background-image: url("resources/instagram_icon.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    transition: all 0.1s ease-in-out;
+}
+
+.popup-btn.secondary {
+    background-image: url("resources/whatsapp_icon.png");
+}
+
+.popup-btn:hover {
+    scale: 120%;
+}
+
+.info{
+    display: flex;
+    gap: 5%;
+    align-items: center;
+}
+
+.info img{
+    width: 25px;
+    height: 25px;
+}
+
+/*
+.poster{
+    width: 100%;
+    height: 40%;
+    background: white;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+}
+
+.poster_image{
+    background-color: black;
+    background-image: url("");
+    width: 60%;
+    height: 100%;
+}
+    */
+
+@media (max-width: 768px)
+{
+    .popup {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.5);
+        z-index: 9999;
+        justify-content: center;
+        align-items: center;
+    }
+    
+    .popup-content {
+        position: relative;
+        margin: 10% auto;
+        width: 50%;
+        height: 50%;
+        padding: 20px;
+        border-radius: 10px;
+        text-align: left;
+        
+        backdrop-filter: blur(10px); /* Blurs the background behind it */
+        -webkit-backdrop-filter: blur(10px); /* Safari support */
+        border-radius: 15px; /* Smooth edges */
+        border: 1px solid rgba(255, 255, 255, 0.2); /* Subtle border */
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Soft shadow */
+    }
+    
+    .close-btn {
+        position: absolute;
+        top: 20px;
+        right: 20px;
+        width: 26px;
+        height: 26px;
+        cursor: pointer;
+        background-image: url(resources/close.png);
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+    
+    #popup-logo {
+        display: block;
+        margin: 0 auto;
+        width: 75px;
+        height: 75px;
+        background-image: url(resources/logo.png);
+        background-size: cover;
+    }
+    
+    .popup-content h2{
+        margin-top: 0;
+    }
+    
+    #popup-header {
+        margin-left: 10%;
+        margin-right: 10%;
+        align-items: center;
+        text-align: center;
+    }
+    
+    .reservations{
+        display: flex;
+        gap: 5%;
+    }
+    
+    #popup-label1{
+        margin-top: 4%;
+    }
+    
+    #popup-label2{
+        width: auto;
+    }
+    
+    .popup-actions {
+        display: flex;
+        justify-content:space-between;
+        align-items: center;
+        width: 30%;
+        gap: 2%;
+    }
+    
+    .popup-btn {
+        width: 25px;
+        height: 25px;
+        cursor: pointer;
+        border: none;
+        border-radius: 5px;
+        color: white;
+        background-color: rgba(0, 0, 0, 0);
+        background-image: url("resources/instagram_icon.png");
+        background-repeat: no-repeat;
+        background-size: cover;
+        transition: scale 0.1s ease-in-out, ;
+    }
+    
+    .popup-btn.secondary {
+        background-image: url("resources/whatsapp_icon.png");
+    }
+
+    .info p{
+        font-size: 14px;
+    }
+
+    /*
+.poster{
+    display: none;
+}
+
+.poster_image{
+    display: none;
+}
+    */
+}
