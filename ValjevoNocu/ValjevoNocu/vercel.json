@@ -1,0 +1,13 @@
+{
+    "builds": [{
+        "src":"ValjevoNocu/wsgi.py",
+        "use": "@vercell/python",
+        "config": { "maxLambdaSize": "15mb", "runtime": "python3.11.3"}
+    }],
+    "routes": [
+        {
+            "src":"/(.*)",
+            "dest":"ValjevoNocu/wsgi.py"
+        }
+    ]
+}
