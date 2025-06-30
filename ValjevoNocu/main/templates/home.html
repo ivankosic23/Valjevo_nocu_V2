@@ -1,7 +1,6 @@
 {% load static %}
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -13,12 +12,10 @@
     <link rel="stylesheet" href="{% static 'main/styles_imagegrid.css' %}">
     <script src="{% static 'main/script.js' %}"></script>
 </head>
-
 <body>
     <h1>Dobrodosli na Valjevo Night Life!</h1>
-    <h2>Ovde mozete naci najpopularnija mesta za izlazak u gradu, zajedno sa informacijama o live svirkama, nastupima
-        poznatih i slicnom.</h2>
-
+    <h2>Ovde mozete naci najpopularnija mesta za izlazak u gradu, zajedno sa informacijama o live svirkama, nastupima poznatih i slicnom.</h2>
+    
     <!-- Day Menus -->
     <div class="day-menu">
         {%for dayi, dayindex in days%}
@@ -26,13 +23,14 @@
         {%endfor%}
     </div>
     <script>
-        function filter(day) {
+        function filter(day)
+        {
             const url = new URL(window.location.href);
             url.searchParams.set('datum', day);
             window.location.href = url;
         }
     </script>
-
+    
     <div class="day-menu-mobile">
         <form method="get" class="menu-form">
             <input type="hidden" name="datum" value="{{day_date}}">
@@ -44,61 +42,51 @@
 
     <div class="container">
 
-        <!-- Image Grid -->
-        <div class="image-grid">
-            {%if svirke %}
-            {%for svirka in svirke%}
-            <div class="image-item"
-                onclick="openPopup('{{svirka.kafic.Ime}}', '{{ svirka.opis }}', '{{svirka.kafic.iglink}}', '{{svirka.kafic.walink}}', '{{svirka.kafic.radno_vreme}}', '{{svirka.kafic.adresa}}')">
-                <img id="{{svirka.kafic.Ime}}" src="{{svirka.kafic.photo.url}}" alt="Image 1" class="kafic-image"
-                    data-name="{{ svirka.kafic.Ime }}" data-about="{{ svirka.opis }}"
-                    data-photo="{{ svirka.kafic.photo.url }}">
-                <p>{{svirka.kafic.Ime}}</p>
-            </div>
-            {%endfor%}
-            {% else %}
-            <p>Nema nijedne svirke u {{danlabel}}</p>
-            {%endif%}
+    <!-- Image Grid -->
+    <div class="image-grid">
+        {%if svirke %}
+        {%for svirka in svirke%}
+        <div class="image-item" onclick="openPopup('{{svirka.kafic.Ime}}', '{{ svirka.opis }}', '{{svirka.kafic.iglink}}', '{{svirka.kafic.walink}}', '{{svirka.kafic.radno_vreme}}', '{{svirka.kafic.adresa}}')">
+            <img id="{{svirka.kafic.Ime}}" src="{{svirka.kafic.photo.url}}" alt="Image 1" class="kafic-image" data-name="{{ svirka.kafic.Ime }}" data-about="{{ svirka.opis }}" data-photo="{{ svirka.kafic.photo.url }}">
+            <p>{{svirka.kafic.Ime}}</p>
         </div>
+        {%endfor%}
+        {% else %}
+            <p >Nema nijedne svirke u {{danlabel}}</p>
+        {%endif%}
+    </div>
 
-        <!-- Popup -->
-        <div id="popup" class="popup" onclick="closePopupOutside(event)">
-            <div class="popup-content">
-                <span class="close-btn" onclick="closePopup()"></span>
-                <div id="popup-logo"> </div>
-                <h2 id="popup-header"></h2>
-                <p id="popup-label1"></p>
-                <div class="reservations">
-                    <p id="popup-label2"> Rezervcije: </p>
-                    <div class="popup-actions">
-                        <a class="popup-btn" href="" id="instalink"></a>
-                        <a class="popup-btn secondary" href="" id="walink"></a>
-                    </div>
-                </div>
-                <div class="info-section">
-                    <div class="info"> <img src="../static/main/resources/house.png">
-                        <p id="adresa"> Ovde adresa lokala </p>
-                    </div>
-                    <div class="info"> <img src="../static/main/resources/clock.png">
-                        <p id="radno_vreme"> Ovde radno vreme </p>
-                    </div>
-                </div>
-                <div class="poster">
-                    <div class="poster_image2"></div>
-                    <div class="poster_image"></div>
-                    <div class="poster_image2"></div>
+    <!-- Popup -->
+    <div id="popup" class="popup" onclick="closePopupOutside(event)">
+        <div class="popup-content">
+            <span class="close-btn" onclick="closePopup()"></span>
+            <div id="popup-logo" > </div>
+            <h2 id="popup-header"></h2>
+            <p id="popup-label1"></p>
+            <div class="reservations">
+                <p id="popup-label2"> Rezervcije: </p>
+                <div class="popup-actions">
+                    <a class="popup-btn" href="" id="instalink"></a>
+                    <a class="popup-btn secondary" href="" id="walink"></a>
                 </div>
             </div>
-        </div>
-
-        <!-- Footer -->
-        <div class="footer">
-            <p>Contact <br> <br>
-                email: relja617@gmail.com / ivankosic23@gmail.com <br><br>
-                phone number: 064 456 9327 <br>
-            </p>
+            <div class="info-section">
+                <div class="info"> <img src="../static/main/resources/house.png"> <p id="adresa"> Ovde adresa lokala </p> </div>
+                <div class="info"> <img src="../static/main/resources/clock.png"> <p id="radno_vreme"> Ovde radno vreme </p> </div>
+            </div>
+            <!-- <div class="poster">
+                <div class="poster_image"></div>
+            </div> -->
         </div>
     </div>
-</body>
 
+    <!-- Footer -->
+    <div class="footer">
+        <p>Contact <br> <br>
+            email: relja617@gmail.com / ivankosic23@gmail.com <br><br>
+            phone number: 064 456 9327 <br>
+        </p>
+      </div>
+    </div>
+</body>
 </html>

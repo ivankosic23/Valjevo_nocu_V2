@@ -16,22 +16,17 @@
 .popup-content {
     position: relative;
     margin: 10% auto;
-    width: 35%;
-    height: 80%;
+    width: 30%;
+    height: 70%;
     padding: 20px;
     border-radius: 10px;
     text-align: left;
-
-    backdrop-filter: blur(10px);
-    /* Blurs the background behind it */
-    -webkit-backdrop-filter: blur(10px);
-    /* Safari support */
-    border-radius: 15px;
-    /* Smooth edges */
-    border: 1px solid rgba(255, 255, 255, 0.2);
-    /* Subtle border */
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    /* Soft shadow */
+    
+    backdrop-filter: blur(10px); /* Blurs the background behind it */
+    -webkit-backdrop-filter: blur(10px); /* Safari support */
+    border-radius: 15px; /* Smooth edges */
+    border: 1px solid rgba(255, 255, 255, 0.2); /* Subtle border */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Soft shadow */
 }
 
 .close-btn {
@@ -55,7 +50,7 @@
     background-size: cover;
 }
 
-.popup-content h2 {
+.popup-content h2{
     margin-top: 0;
 }
 
@@ -66,22 +61,22 @@
     text-align: center;
 }
 
-.reservations {
+.reservations{
     display: flex;
     gap: 2.5%;
 }
 
-#popup-label1 {
+#popup-label1{
     margin-top: 4%;
 }
 
-#popup-label2 {
+#popup-label2{
     width: auto;
 }
 
 .popup-actions {
     display: flex;
-    justify-content: space-between;
+    justify-content:space-between;
     align-items: center;
     width: 15%;
 }
@@ -108,13 +103,13 @@
     scale: 120%;
 }
 
-.info {
+.info{
     display: flex;
     gap: 5%;
     align-items: center;
 }
 
-.info img {
+.info img{
     width: 25px;
     height: 25px;
 }
@@ -123,36 +118,23 @@
 .poster{
     width: 100%;
     height: 40%;
+    background: white;
     display: flex;
-    justify-content: space-between;
-    gap: 0;
+    justify-content: center;
+    align-content: center;
     align-items: center;
-    margin-top: 20px;
 }
 
 .poster_image{
-    background-color: rgb(255, 255, 255);
+    background-color: black;
     background-image: url("");
-    background-repeat: no-repeat;
-    background-size: cover;
-    width: 40%;
+    width: 60%;
     height: 100%;
 }
+    */
 
-.poster_image2{
-    background-color: rgb(97, 97, 97);
-    background-image: url("");
-    background-repeat: no-repeat;
-    background-size: cover;
-    width: 30%;
-    height: 100%;
-} */
-
-.poster {
-    display: none;
-}
-
-@media (max-width: 768px) {
+@media (max-width: 768px)
+{
     .popup {
         display: none;
         position: fixed;
@@ -165,7 +147,7 @@
         justify-content: center;
         align-items: center;
     }
-
+    
     .popup-content {
         position: relative;
         margin: 10% auto;
@@ -174,19 +156,14 @@
         padding: 20px;
         border-radius: 10px;
         text-align: left;
-
-        backdrop-filter: blur(10px);
-        /* Blurs the background behind it */
-        -webkit-backdrop-filter: blur(10px);
-        /* Safari support */
-        border-radius: 15px;
-        /* Smooth edges */
-        border: 1px solid rgba(255, 255, 255, 0.2);
-        /* Subtle border */
-        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-        /* Soft shadow */
+        
+        backdrop-filter: blur(10px); /* Blurs the background behind it */
+        -webkit-backdrop-filter: blur(10px); /* Safari support */
+        border-radius: 15px; /* Smooth edges */
+        border: 1px solid rgba(255, 255, 255, 0.2); /* Subtle border */
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Soft shadow */
     }
-
+    
     .close-btn {
         position: absolute;
         top: 20px;
@@ -198,7 +175,7 @@
         background-repeat: no-repeat;
         background-size: cover;
     }
-
+    
     #popup-logo {
         display: block;
         margin: 0 auto;
@@ -207,39 +184,39 @@
         background-image: url(resources/logo.png);
         background-size: cover;
     }
-
-    .popup-content h2 {
+    
+    .popup-content h2{
         margin-top: 0;
     }
-
+    
     #popup-header {
         margin-left: 10%;
         margin-right: 10%;
         align-items: center;
         text-align: center;
     }
-
-    .reservations {
+    
+    .reservations{
         display: flex;
         gap: 5%;
     }
-
-    #popup-label1 {
+    
+    #popup-label1{
         margin-top: 4%;
     }
-
-    #popup-label2 {
+    
+    #popup-label2{
         width: auto;
     }
-
+    
     .popup-actions {
         display: flex;
-        justify-content: space-between;
+        justify-content:space-between;
         align-items: center;
         width: 30%;
         gap: 2%;
     }
-
+    
     .popup-btn {
         width: 25px;
         height: 25px;
@@ -253,16 +230,22 @@
         background-size: cover;
         transition: scale 0.1s ease-in-out, ;
     }
-
+    
     .popup-btn.secondary {
         background-image: url("resources/whatsapp_icon.png");
     }
 
-    .info p {
+    .info p{
         font-size: 14px;
     }
 
-    .poster {
-        display: none;
-    }
+    /*
+.poster{
+    display: none;
+}
+
+.poster_image{
+    display: none;
+}
+    */
 }
